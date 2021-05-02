@@ -1,0 +1,16 @@
+<%= form_with model: user, class: "form-user" do |form| %>
+  <% if user.errors.any? %>
+    <ul>
+     <% user.errors.full_messages.each do |message| %>
+    <li> <%= message %> </li>
+     <% end %>
+  <% end %>
+  </ul>
+  <%= form.label :username %>
+  <%= form.text_field :username %>
+  <%= form.label :email %>
+  <%= form.email_field :email, placeholder: "example@gmail.com" %>  
+  <%= form.label :password %>
+  <%= form.password_field :password %>  
+  <%= form.submit %>
+<% end %>
